@@ -1,0 +1,8 @@
+/Stitch_Screens
+/rinky_jahan_app/node   _modules
+/rinky_jahan_backend/node_modules
+/rinky_jahan_backend/.env
+/rinky_jahan_backend/dist
+/rinky_jahan_app/.dart_tool
+/rinky_jahan_app/build
+/rinky_jahan_app/.vscode
