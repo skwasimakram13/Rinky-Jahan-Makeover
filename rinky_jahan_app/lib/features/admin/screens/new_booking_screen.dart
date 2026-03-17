@@ -252,14 +252,14 @@ class _AdminCreateHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override double get minExtent => 64;
   @override double get maxExtent => 64;
   @override Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) =>
-      ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
+      SizedBox.expand(child: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
         color: _bg.withValues(alpha: 0.85),
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: SafeArea(bottom: false, child: Row(children: [
+        child: Row(children: [
           IconButton(icon: const Icon(Icons.arrow_back, color: _onSurface), onPressed: onBack),
           Expanded(child: Text('New Booking', style: GoogleFonts.notoSerif(fontSize: 19, fontWeight: FontWeight.w700, color: _onSurface))),
           IconButton(icon: const Icon(Icons.more_vert, color: _onSurface), onPressed: () {}),
-        ])),
-      )));
+        ]),
+      ))));
   @override bool shouldRebuild(covariant SliverPersistentHeaderDelegate old) => false;
 }

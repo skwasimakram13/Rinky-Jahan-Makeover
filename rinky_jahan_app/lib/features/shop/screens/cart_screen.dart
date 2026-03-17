@@ -190,15 +190,15 @@ class _CartBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
+    return SizedBox.expand(child: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
       color: _bg.withValues(alpha: 0.83),
       padding: const EdgeInsets.symmetric(horizontal: 6),
-      child: SafeArea(bottom: false, child: Row(children: [
+      child: Row(children: [
         IconButton(icon: Container(width: 36, height: 36, decoration: const BoxDecoration(shape: BoxShape.circle, color: _surfaceHighest), child: const Icon(Icons.arrow_back, color: _onSurface, size: 17)), onPressed: onBack),
         Expanded(child: Center(child: Text('My Cart ($count)', style: GoogleFonts.notoSerif(fontSize: 17, color: _onSurface)))),
         IconButton(icon: Container(width: 36, height: 36, decoration: const BoxDecoration(shape: BoxShape.circle, color: _surfaceHighest), child: const Icon(Icons.more_vert, color: _onSurface, size: 17)), onPressed: () {}),
-      ])),
-    )));
+      ]),
+    ))));
   }
   @override bool shouldRebuild(covariant _CartBarDelegate old) => old.count != count;
 }

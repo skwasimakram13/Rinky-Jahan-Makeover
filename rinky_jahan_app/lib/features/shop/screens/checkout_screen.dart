@@ -250,18 +250,18 @@ class _CheckBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) =>
-      ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
+      SizedBox.expand(child: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
         color: _bg.withValues(alpha: 0.85),
         padding: const EdgeInsets.symmetric(horizontal: 6),
-        child: SafeArea(bottom: false, child: Row(children: [
+        child: Row(children: [
           IconButton(
             icon: Container(width: 36, height: 36, decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFFF9F3EA)), child: const Icon(Icons.arrow_back, color: _primary, size: 17)),
             onPressed: onBack,
           ),
           Expanded(child: Center(child: Text('Checkout', style: GoogleFonts.notoSerif(fontSize: 18, color: _onSurface)))),
           const SizedBox(width: 48),
-        ])),
-      )));
+        ]),
+      ))));
 
   @override bool shouldRebuild(covariant _CheckBarDelegate old) => false;
 }

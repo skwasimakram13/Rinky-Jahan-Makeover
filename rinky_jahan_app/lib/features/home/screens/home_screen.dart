@@ -74,6 +74,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               surfaceHigh: _surfaceHigh,
               outlineVariant: _outlineVariant,
               onCartTap: () => context.push('/shop'),
+              topPadding: MediaQuery.of(context).padding.top,
             ),
           ),
 
@@ -268,6 +269,7 @@ class _GlassAppBarDelegate extends SliverPersistentHeaderDelegate {
   final Color surfaceHigh;
   final Color outlineVariant;
   final VoidCallback onCartTap;
+  final double topPadding;
 
   _GlassAppBarDelegate({
     required this.userName,
@@ -279,25 +281,31 @@ class _GlassAppBarDelegate extends SliverPersistentHeaderDelegate {
     required this.surfaceHigh,
     required this.outlineVariant,
     required this.onCartTap,
+    required this.topPadding,
   });
 
+  static const double _kToolbarHeight = 68;
+
   @override
-  double get minExtent => 68;
+  double get minExtent => _kToolbarHeight + topPadding;
   @override
-  double get maxExtent => 68;
+  double get maxExtent => _kToolbarHeight + topPadding;
 
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          color: Colors.white.withOpacity(0.82),
-          padding:
-              const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-          child: SafeArea(
-            bottom: false,
+    return SizedBox.expand(
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Container(
+            color: Colors.white.withOpacity(0.82),
+            padding: EdgeInsets.only(
+              left: 20,
+              right: 20,
+              top: 12 + topPadding,
+              bottom: 12,
+            ),
             child: Row(
               children: [
                 Icon(Icons.menu, color: onSurface),

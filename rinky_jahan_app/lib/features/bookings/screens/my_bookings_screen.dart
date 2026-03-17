@@ -212,15 +212,15 @@ class _BookingsBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
+    return SizedBox.expand(child: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
       color: _bg.withValues(alpha: 0.84),
       padding: const EdgeInsets.symmetric(horizontal: 6),
-      child: SafeArea(bottom: false, child: Row(children: [
+      child: Row(children: [
         IconButton(icon: const Icon(Icons.arrow_back, color: _onSurface), onPressed: onBack),
         Expanded(child: Center(child: Text('My Bookings', style: GoogleFonts.notoSerif(fontSize: 19, color: _onSurface)))),
         IconButton(icon: const Icon(Icons.more_vert, color: _primary), onPressed: () {}),
-      ])),
-    )));
+      ]),
+    ))));
   }
   @override bool shouldRebuild(covariant _BookingsBarDelegate old) => false;
 }

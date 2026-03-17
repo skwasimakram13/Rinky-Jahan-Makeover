@@ -230,15 +230,15 @@ class _TrackBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) =>
-      ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
+      SizedBox.expand(child: ClipRect(child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20), child: Container(
         color: _bg.withValues(alpha: 0.84),
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: SafeArea(bottom: false, child: Row(children: [
+        child: Row(children: [
           IconButton(icon: const Icon(Icons.arrow_back, color: _onSurface), onPressed: onBack),
           Expanded(child: Text('Order #$orderId', style: GoogleFonts.notoSerif(fontSize: 17, color: _onSurface))),
           IconButton(icon: const Icon(Icons.more_vert, color: _onSurface), onPressed: () {}),
-        ])),
-      )));
+        ]),
+      ))));
 
   @override bool shouldRebuild(covariant _TrackBarDelegate old) => false;
 }

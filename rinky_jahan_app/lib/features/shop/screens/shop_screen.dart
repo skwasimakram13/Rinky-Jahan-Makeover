@@ -237,15 +237,14 @@ class _ShopAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          color: const Color(0xFFFFF9EF).withOpacity(0.85),
-          padding:
-              const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: SafeArea(
-            bottom: false,
+    return SizedBox.expand(
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Container(
+            color: const Color(0xFFFFF9EF).withOpacity(0.85),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Row(
               children: [
                 Icon(Icons.menu, color: onSurface, size: 22),

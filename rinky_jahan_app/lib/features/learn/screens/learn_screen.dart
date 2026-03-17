@@ -504,15 +504,14 @@ class _LearnAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return ClipRect(
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-        child: Container(
-          color: const Color(0xFFFFF9EF).withOpacity(0.82),
-          padding:
-              const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-          child: SafeArea(
-            bottom: false,
+    return SizedBox.expand(
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          child: Container(
+            color: const Color(0xFFFFF9EF).withOpacity(0.82),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
             child: Row(
               children: [
                 IconButton(
