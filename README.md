@@ -1,6 +1,8 @@
 # Rinky Jahan Makeover
 
 Welcome to the **Rinky Jahan Makeover** project repository! This is a full-stack solution designed for a salon and makeover service platform. The platform allows users to browse services/products, book appointments with stylists, and manage their profile, while an admin interface allows the business to manage operations.
+## 🌐 Live App Website URL
+-📱 [https://rinky-jahan-makeover.web.app](https://rinky-jahan-makeover.web.app/)
 
 ## 🚀 Tech Stack
 
