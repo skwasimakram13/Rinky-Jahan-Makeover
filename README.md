@@ -163,7 +163,7 @@ graph TD
 
 ## 📸 Screenshots
 
-*(Add screenshots of the application here)*
+*(Screenshots of the application will upload here)*
 
 ---
 
@@ -233,3 +233,34 @@ Follow the instructions in the terminal to upload to TestFlight or the App Store
    - Backend: Follow TypeScript strong typing conventions.
    - Frontend: Use `flutter analyze` and follow standard Riverpod architectural patterns.
 3. **Pull Requests:** Ensure your code is thoroughly tested before submitting a PR.
+
+---
+
+# License & Contact
+- MIT License — you may use and modify the code for your organization. Include attribution if you redistribute.
+- For commercial / closed-source product consider proprietary license.
+
+**Contact**: Project owner / maintainer - wasim@demoody.com
+
+---
+
+## Author
+**Develope By** - [Sk Wasim Akram](https://github.com/skwasimakram13)
+
+- 👨‍💻 All of my projects are available at [https://skwasimakram.com](https://skwasimakram.com)
+
+- 📝 I regularly write articles on [https://blog.skwasimakram.com](https://blog.skwasimakram.com)
+
+- 📫 How to reach me **hello@skwasimakram.com**
+
+- 🧑‍💻 Google Developer Profile [https://g.dev/skwasimakram](https://g.dev/skwasimakram)
+
+- 📲 LinkedIn [https://www.linkedin.com/in/sk-wasim-akram](https://www.linkedin.com/in/sk-wasim-akram)
+
+---
+
+💡 *Built with ❤️ and creativity by Wassu.*
+
+---
+
+
